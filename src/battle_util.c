@@ -4671,7 +4671,9 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     else
                         gBattlescriptCurrInstr = BattleScript_MonMadeMoveUseless_PPLoss;
                 }
-                else
+                break;
+            case HOLD_EFFECT_MENTAL_HERB:
+                if (gBattleMons[battlerId].status2 & STATUS2_INFATUATION)
                 {
                     if (gProtectStructs[gBattlerAttacker].notFirstStrike)
                         gBattlescriptCurrInstr = BattleScript_MoveStatDrain;
@@ -5227,8 +5229,8 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     effect = 1;
                 }
                 break;
-            case ABILITY_OWN_TEMPO:
-                if (gBattleMons[battler].status2 & STATUS2_CONFUSION)
+            case HOLD_EFFECT_MENTAL_HERB:
+                if (gBattleMons[battlerId].status2 & STATUS2_INFATUATION)
                 {
                     StringCopy(gBattleTextBuff1, gStatusConditionString_ConfusionJpn);
                     effect = 2;
