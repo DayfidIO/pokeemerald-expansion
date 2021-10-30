@@ -2363,13 +2363,12 @@ const struct Item gItems[] =
 
     [ITEM_PAYAPA_BERRY] =
     {
-        .name = _("Payapa Berry"),
-        .itemId = ITEM_PAYAPA_BERRY,
-        .price = 20,
-        .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_PSYCHIC,
-        .description = sPayapaBerryDesc,
-        .pocket = POCKET_BERRIES,
+        .name = _("MENTAL HERB"),
+        .itemId = ITEM_MENTAL_HERB,
+        .price = 100,
+        .holdEffect = HOLD_EFFECT_MENTAL_HERB,
+        .description = sMentalHerbDesc,
+        .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
